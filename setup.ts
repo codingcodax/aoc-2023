@@ -14,7 +14,7 @@ await Deno.create(`./${day}/s2.ts`);
 
 // add/edit tasks in deno.json for runing solutions
 
-const denoJson = JSON.parse(await Deno.readTextFile("./deno.json"));
+const denoJson = await Deno.readTextFile("./deno.json");
 const tasks = JSON.parse(denoJson).tasks;
 
 tasks["s1"] = `deno run --allow-all --unstable ./${day}/s1.ts`;
